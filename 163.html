@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐歌单</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
+</head>
+<body>
+    <!-- 添加音频标签 -->
+    <audio id="audioPlayer" preload="none"></audio>
+    <div class="container">
+        <header class="header">
+            <h1>⚡️鸡好精选歌单⚡</h1>
+            <div class="player-controls">
+                <button id="playPauseBtn" class="play-pause-btn">▶</button>
+                <div class="song-info-display">
+                    <div id="currentSongName" class="song-name">暂无正在播放的歌曲</div>
+                    <div class="progress-container">
+                        <span id="currentTime" class="time">0:00</span>
+                        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
+                        <span id="totalTime" class="time">0:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="playlist-buttons">
+                <button class="playlist-btn active" data-playlist-id="14185195349">精选</button>
+                <button class="playlist-btn" data-playlist-id="14187827171">哈基米</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- 歌单详情 -->
+            <section class="playlist-section">
+                <h2>歌单详情</h2>
+                <div id="playlistDetail" class="playlist-detail">
+                    <div class="loading">加载中...</div>
+                </div>
+                <a href="https://jihao.icu" style="font-size: 20px;">主站</a>
+                <a href="https://2778.site" style="font-size: 20px;">访问新分享网站 “2778”</a>
+            </section>
+
+            <!-- 歌曲列表 -->
+            <section class="songs-section">
+                <h2>歌曲列表</h2>
+                <div id="songsList" class="songs-list">
+                    <div class="loading">加载中...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a href="https://music.163.com/#/playlist?id=14185195349" target="_blank" class="playlist-link">
+                前往网易云音乐查看完整歌单
+            </a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
