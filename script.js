@@ -467,6 +467,17 @@ class NeteaseMusic {
 }
 
 // 页面加载完成后初始化
+let neteaseMusicInstance = null;
+
 document.addEventListener('DOMContentLoaded', function() {
-    new NeteaseMusic();
+    neteaseMusicInstance = new NeteaseMusic();
+    
+    // 创建全局可访问的clearCache函数
+    window.clearCache = function() {
+        if (neteaseMusicInstance) {
+            neteaseMusicInstance.clearCache();
+        } else {
+            console.error('NeteaseMusic实例尚未初始化');
+        }
+    };
 });
